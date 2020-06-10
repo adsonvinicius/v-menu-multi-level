@@ -168,21 +168,21 @@ export default {
 <h2 id="default-styles">Default Styles</h2>
 
 ##### [container-items-style-down](#container-items-style-down)
-```json
+```css
 {
   border: "solid 1px #eee"
 }
 ```
 
 ##### [container-items-style-right](#container-items-style-right)
-```json
+```css
 {
   border: "solid 1px #eee"
 }
 ```
 
 ##### [icon-down-after](#icon-down-after)
-```json
+```css
 {
   opened: {
     icon: "–",
@@ -200,7 +200,7 @@ export default {
 ```
 
 ##### [icon-down-before](#icon-down-before)
-```json
+```css
 {
   opened: {
     icon: "",
@@ -214,7 +214,7 @@ export default {
 ```
 
 ##### [icon-down-before-leaf](#icon-down-before-leaf)
-```json
+```css
 {
   icon: "",
   style: { }
@@ -222,7 +222,7 @@ export default {
 ```
 
 ##### [icon-right-after](#icon-right-after)
-```json
+```css
 {
   opened: {
     icon: "▾",
@@ -242,7 +242,7 @@ export default {
 ```
 
 ##### [icon-right-before](#icon-right-before)
-```json
+```css
 {
   opened: {
     icon: "",
@@ -256,7 +256,7 @@ export default {
 ```
 
 ##### [icon-right-before-leaf](#icon-right-before-leaf)
-```json
+```css
 {
   icon: "",
   style: { }
@@ -264,7 +264,7 @@ export default {
 ```
 
 ##### [icon-root-after](#icon-root-after)
-```json
+```css
 {
   opened: {
     icon: "▾",
@@ -283,7 +283,7 @@ export default {
 ```
 
 ##### [icon-root-before](#icon-root-before)
-```json
+```css
 {
   opened: {
     icon: "",
@@ -297,7 +297,7 @@ export default {
 ```
 
 ##### [item-active-style](#item-active-style)
-```json
+```css
 {
   color: "#fff",
   background: "#444"
@@ -305,14 +305,14 @@ export default {
 ```
 
 ##### [item-hover-style](#item-hover-style)
-```json
+```css
 {
   backgroundColor: "#e7e7e7"
 }
 ```
 
 ##### [item-style](#item-style)
-```json
+```css
 {
   padding: "6px",
   backgroundColor: "#f5f5f5"
@@ -320,7 +320,7 @@ export default {
 ```
 
 ##### [root-item-active-style](#root-item-active-style)
-```json
+```css
 {
   color: "#fff",
   background: "#444"
@@ -328,14 +328,14 @@ export default {
 ```
 
 ##### [root-item-hover-style](#root-item-hover-style)
-```json
+```css
 {
   backgroundColor: "#eee"
 }
 ```
 
 ##### [root-item-style](#root-item-style)
-```json
+```css
 {
   backgroundColor: "#f9f9f9",
   textAlign: "center",
@@ -345,7 +345,7 @@ export default {
 ```
 
 ##### [striped-style](#striped-style)
-```json
+```css
 [
   {
     backgroundColor: "#f9f9f9"

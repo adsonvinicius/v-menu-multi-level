@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-drafts
+/drafts
+/public
 vs.code-workspace
 # local env files
 .env.local

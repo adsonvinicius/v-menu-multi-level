@@ -22,7 +22,7 @@
 
 #### Features: ####
 
-- Auto change sub-menu open-direction when the document body overflows.
+- Auto change sub-menu *open-direction* property when the document body overflows.
 - Set a sorting function for nodes in same level.
 - Open sub-menus in *down* or *right* directions.
 - Set icons and its style before or after nodes.

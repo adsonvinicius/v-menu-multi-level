@@ -29,7 +29,7 @@
 - Keep a sub-menu opened when click outside from them.
 - Set icons when a sub-menu is opened or closed.
 - Apply CSS3 for hover, active or striped on items.
-- Set an root node visibilty dynamically.
+- Set a root node visibilty dynamically.
 - Close all opened sub-menus when click outside from them.
 - Set menu alignment for root items.
 - Add prepend and/or append slots for menu.

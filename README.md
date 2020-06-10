@@ -79,37 +79,41 @@ import VMenuMultiLevel from 'v-menu-multi-level'
 import 'v-menu-multi-level/dist/v-menu-multi-level.css'
 
 export default {
-	components: { VMenuMultiLevel },
-	data ( ) {
-		return {
-			nodes: [ {
-				label: 'North America',
-				visible: true,
-				children: [ {
-					label: 'United States',
-					children: [ {
-						label: 'California',
-						children: [ {
-							label: 'Los Angeles',
-							children: [ {
-								label: 'Beverly Hills',
-								children: [ ]								
-							},
-							{
-								label: 'Hollywood',
-								children: [ ]								
-							},
-							{
-								label: 'Santa Monica',
-								children: [ ]								
-							}]
-						} ]
-					} ]
-			 	] }
-			// . . .
-			} ]
-		}
-	}
+  components: {
+    VMenuMultiLevel
+  },
+  data() {
+    return {
+      nodes: [{
+        label: 'North America',
+        visible: true,
+        children: [{
+            label: 'United States',
+            children: [{
+              label: 'California',
+              children: [{
+                label: 'Los Angeles',
+                children: [{
+                    label: 'Beverly Hills',
+                    children: []
+                  },
+                  {
+                    label: 'Hollywood',
+                    children: []
+                  },
+                  {
+                    label: 'Santa Monica',
+                    children: []
+                  }
+                ]
+              }]
+            }]
+          ]
+        }
+        // . . .
+      }]
+    }
+  }
 }
 </script>
 ```

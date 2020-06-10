@@ -1,7 +1,7 @@
 # v-menu-multi-level
 
 <h1 align="center">
-    <img src="https://www.dropbox.com/s/ap793hc9swnvvcu/v-menu-multi-level-promo.png?raw=1">
+    <img src="https://www.dropbox.com/s/algwnq7yiyiv8mi/v-menu-multi-level-promo.png?raw=1">
     <br>  
 </h1>
 
@@ -22,14 +22,14 @@
 
 #### Features: ####
 
-- Auto change sub-menu open-direction when the document body overflows.
+- Auto change sub-menu *open-direction* property when the document body overflows.
 - Set a sorting function for nodes in same level.
 - Open sub-menus in *down* or *right* directions.
 - Set icons and its style before or after nodes.
 - Keep a sub-menu opened when click outside from them.
 - Set icons when a sub-menu is opened or closed.
 - Apply CSS3 for hover, active or striped on items.
-- Set an root node visibilty dynamically.
+- Set a root node visibilty dynamically.
 - Close all opened sub-menus when click outside from them.
 - Set menu alignment for root items.
 - Add prepend and/or append slots for menu.
@@ -154,7 +154,7 @@ export default {
 | striped-style<sup>1</sup> | Array  | <a href="#striped-style">View</a> | Applies an array of one or more CSS3 objects for items on a submenu resulting on a striped effect |
 
 #### Notes ####
-<sup>1</sup>Inherits CSS3 properties from *itemStyle*
+<sup>1</sup>Inherits CSS3 properties from *itemStyle*<br/>
 <sup>2</sup>Inherits CSS3 properties from *rootItemStyle*
 
 ### Slots ####
@@ -376,4 +376,3 @@ export default {
 <h2 id="credits">Credits</h2>
 
  Developed by **Adson Vinicius**
-

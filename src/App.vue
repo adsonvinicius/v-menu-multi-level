@@ -57,34 +57,7 @@ export default {
   },
   data(){
     return {
-      nodes: [{
-        label: 'North America',
-        visible: true,
-        children: [{
-            label: 'United States',
-            children: [{
-              label: 'California',
-              children: [
-                {
-                label: 'Los Angeles',
-                children: [
-                  {
-                    label: 'Beverly Hills',
-                    children: []
-                  },
-                  {
-                    label: 'Hollywood',
-                    children: []
-                  },
-                  {
-                    label: 'Santa Monica',
-                    children: []
-                  }
-                ]
-              }]
-            }]
-        }]
-       }],
+      nodes: [{"label":"North America","children":[{"label":"United States","children":[{"label":"California","children":[{"label":"Los Angeles","children":[{"label":"Hollywood","children":[]},{"label":"Santa Monica","children":[]},{"label":"Beverly Hills","children":[]}]},{"label":"San Diego","children":[{"label":"city","children":[]}]},{"label":"San Francisco","children":[{"label":"city","children":[]}]}]},{"label":"Hawaii","children":[{"label":"city","children":[]}]},{"label":"New York","children":[{"label":"city","children":[]}]},{"label":"Texas","children":[{"label":"city","children":[]}]}]},{"label":"Canada","children":[{"label":"Alberta","children":[]}]}]},{"label":"South America","children":[{"label":"city","children":[]}]},{"label":"Europe","children":[{"label":"city","children":[]}]},{"label":"Asia","children":[{"label":"city","children":[]}]},{"label":"Oceania","visible":false,"children":[{"label":"city","children":[]}]}],
       iconRootBefore : {
           opened: { icon: '', style: '' },
           closed: { icon: '', style: '' }  

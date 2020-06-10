@@ -46,7 +46,7 @@
 
 #### Notes ####
 
-The generated menu uses the CSS3 property *display: flex* and its related properties for desktop platforms where the dimension of the menu depends of nodes' label, specially on root items.
+The generated menu uses the CSS3 property *display: flex* and its related properties for desktop platforms where the dimension of the menu depends of nodes' label, specially on root items. Any CSS3 property can be passed to container menu directly from component.
 
 The auto *open-direction* of an item checks if the body's dimension has changed after rendered, so the *open-direction* property when is set to *right* is changed to *down* when it occurs.
 <br>

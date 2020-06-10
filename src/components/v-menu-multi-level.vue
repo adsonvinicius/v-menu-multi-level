@@ -213,15 +213,11 @@ export default {
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none;
-    background-color: #f8f9fa!important;   
-
+    background-color: #f8f9fa;   
     margin: 0;
     padding: 0;
-
     font-weight: 400;
-    color: #212529;
-    
-    background-color: #fff;
+    color: #212529;  
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
 }

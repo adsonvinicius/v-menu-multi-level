@@ -18,7 +18,7 @@
 
 <h2 id="introduction">Introduction</h2>
 
-**v-menu-multi-level** is a customlizable UI Component for VueJS that creates a multi-level menu from a JSON data on a defined structure. The assigned props allows customize this menu using CSS3 properties and change the behavior of the menu.
+**v-menu-multi-level** is a customlizable UI Component for VueJS that creates a multi-level menu from a JSON data on a defined structure. The assigned props allows customize this menu using CSS3 properties and change its behavior.
 
 #### Features: ####
 
@@ -36,13 +36,14 @@
 - Set a function to be executed when an item is clicked.
 
 #### Definitions: ####
- **Node**: A JavaScript Object containing a string for a label and an array of zero or more children nodes.
- **Root**: First level of the component node's property.
- **Leaf**: A node which doesn't have children nodes.
- **Item**: A rendered node on HTML.
- **Menu**: A rendered collection of all root nodes on HTML.
- **Sub-menu**: A rendered collection of one children's node on HTML.
-<br>
+
+- **Node**: A JavaScript Object containing a string for a label and an array of zero or more children nodes.
+- **Root**: First level of the component node's property.
+- **Leaf**: A node which doesn't have children nodes.
+- **Item**: A rendered node on HTML.
+- **Menu**: A rendered collection of all root nodes on HTML.
+- **Sub-menu**: A rendered collection of one children's node on HTML.
+
 #### Notes ####
 
 The generated menu uses the CSS3 property *display: flex* and its related properties for desktop platforms where the dimension of the menu depends of nodes' label, specially on root items.

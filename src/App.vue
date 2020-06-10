@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import reports from './../public/reports.json'
+import reports from './../drafts/reports.json'
 import VMenuMultiLevel from './components/v-menu-multi-level'
 
 export default {

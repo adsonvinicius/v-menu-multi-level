@@ -154,7 +154,7 @@ export default {
 | striped-style<sup>1</sup> | Array  | <a href="#striped-style">View</a> | Applies an array of one or more CSS3 objects for items on a submenu resulting on a striped effect |
 
 #### Notes ####
-<sup>1</sup>Inherits CSS3 properties from *itemStyle*
+<sup>1</sup>Inherits CSS3 properties from *itemStyle*<br/>
 <sup>2</sup>Inherits CSS3 properties from *rootItemStyle*
 
 ### Slots ####

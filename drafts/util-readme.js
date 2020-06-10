@@ -18,3 +18,11 @@ for(var _p in __customProps){
     }
 }
 console.log(result);
+
+// -----
+
+normalizeString(str) {
+    var map = {'_' : '-| ','a' : 'á|à|ã|â|À|Á|Ã|Â','e' : 'é|è|ê|É|È|Ê','i' : 'í|ì|î|Í|Ì|Î','o' : 'ó|ò|ô|õ|Ó|Ò|Ô|Õ','u' : 'ú|ù|û|ü|Ú|Ù|Û|Ü','c' : 'ç|Ç','n' : 'ñ|Ñ'}               
+    for (var p in map) str = str.toLowerCase().replace(new RegExp(map[p], 'g'), p)
+    return str.replace(/\s/g, '').replace(/\W/g, '')
+}

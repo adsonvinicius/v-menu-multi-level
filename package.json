@@ -1,6 +1,6 @@
 {
   "name": "v-menu-multi-level",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "license": "MIT",
   "description": "A customizable VueJS menu multi-level",

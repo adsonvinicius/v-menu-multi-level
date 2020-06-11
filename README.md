@@ -88,28 +88,26 @@ export default {
         label: 'North America',
         visible: true,
         children: [{
-            label: 'United States',
+          label: 'United States',
+          children: [{
+            label: 'California',
             children: [{
-              label: 'California',
+              label: 'Los Angeles',
               children: [{
-                label: 'Los Angeles',
-                children: [{
-                    label: 'Beverly Hills',
-                    children: []
-                  },
-                  {
-                    label: 'Hollywood',
-                    children: []
-                  },
-                  {
-                    label: 'Santa Monica',
-                    children: []
-                  }
-                ]
+                label: 'Beverly Hills',
+                children: []
+              },
+              {
+                label: 'Hollywood',
+                children: []
+              },
+              {
+                label: 'Santa Monica',
+                children: []
               }]
             }]
-          ]
-        }
+          }]
+        }]
         // . . .
       }]
     }
@@ -304,7 +302,7 @@ export default {
 ```css
 {
   color: "#fff",
-  background: "#444"
+  backgroundColor: "#444"
 }
 ```
 
@@ -327,7 +325,7 @@ export default {
 ```css
 {
   color: "#fff",
-  background: "#444"
+  backgroundColor: "#444"
 }
 ```
 

@@ -69,7 +69,7 @@ export default {
                 },
                 rootItemActiveStyle: {
                     color: '#fff',
-                    background: '#444'
+                    backgroundColor: '#444'
                 },
                 rootItemHoverStyle: {
                     backgroundColor: '#eee'
@@ -94,7 +94,7 @@ export default {
                 },            
                 itemActiveStyle: {
                     color: '#fff',
-                    background: '#444'
+                    backgroundColor: '#444'
                 } 
             }    
         }

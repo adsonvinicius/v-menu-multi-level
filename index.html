@@ -57,15 +57,17 @@
         :item-style="itemStyle" 
         :nodes="nodes" 
         @click-item="clickItem">
+
         <template v-slot:prepend>
-              <div class="profile"><span>World Cities</span></div>
+              <div class="profile"><span>v-menu-multi-level</span></div>
         </template>
+
         <template v-slot:append>
               <div class="user-info">
-                <span>Adson Vinicius</span>
-                <span>v-menu-multi-level</span>
+                <span><i>Developed by</i></span>
+                <span><i>Adson Vinicius</i></span>
               </div>
-        </template>      
+        </template>    
       </v-menu-multi-level>
   </div>
 <!-- partial -->

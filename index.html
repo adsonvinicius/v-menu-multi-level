@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Live Demo: v-menu-multi-level  - by adsonvinicius</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://unpkg.com/v-menu-multi-level@latest/dist/v-menu-multi-level.css'><link rel="stylesheet" href="./style.css">
+<style>
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+.profile {
+    color: #555!important;
+    font-weight: bold;
+    padding: 15px 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.user-info {
+  display: block;
+  padding: 10px 15px;
+}
+.user-info span:first-of-type{
+  font-weight:bold;
+  font-size:1.2em
+}
+ 
+.user-info span {
+  display: block;
+  text-align: right;
+}
+
+
+.drive i {
+  font-size: .6em;
+  position: relative;
+  top:-2px
+}
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+ <v-menu-multi-level
+        align="center"
+        :icon-down-after="iconDownAfter" 
+        :icon-down-before="iconDownBefore" 
+        :icon-down-before-leaf="iconDownBeforeLeaf" 
+        :icon-root-after="iconRootAfter" 
+        :icon-right-after="iconRightAfter"  
+        :icon-right-before="iconRightBefore" 
+        :icon-right-before-leaf="iconRightBeforeLeaf"
+        :item-style="itemStyle" 
+        :nodes="nodes" 
+        @click-item="clickItem">
+        <template v-slot:prepend>
+              <div class="profile"><span>World Cities</span></div>
+        </template>
+        <template v-slot:append>
+              <div class="user-info">
+                <span>Adson Vinicius</span>
+                <span>v-menu-multi-level</span>
+              </div>
+        </template>      
+      </v-menu-multi-level>
+  <br><br><br><br><br><br>
+  <div class="drive" align="center"><h2>Browse to North America <i class="fa fa-chevron-right" aria-hidden="true"></i> United States <i class="fa fa-chevron-right" aria-hidden="true"></i> California <i class="fa fa-chevron-right" aria-hidden="true"></i> Los Angeles</h2></div>
+</div>
+<!-- partial -->
+<script src='https://cdn.jsdelivr.net/npm/vue@2.6.11'></script>
+<script src='https://unpkg.com/babel-polyfill@6.26.0/dist/polyfill.min.js'></script>
+<script src='https://unpkg.com/v-menu-multi-level@latest/dist/v-menu-multi-level.umd.min.js'></script><script  src="./script.js"></script>
+<script>
+var app = new Vue({
+    el: '#app',
+    components: {'v-menu-multi-level': window['v-menu-multi-level'] },
+    data: {
+      nodes: [{"label":"North America","children":[{"label":"United States","children":[{"label":"California","children":[{"label":"Los Angeles","children":[{"label":"Hollywood","children":[]},{"label":"Santa Monica","children":[]},{"label":"Beverly Hills","children":[]}]},{"label":"San Diego","children":[{"label":"city","children":[]}]},{"label":"San Francisco","children":[{"label":"city","children":[]}]}]},{"label":"Hawaii","children":[{"label":"city","children":[]}]},{"label":"New York","children":[{"label":"city","children":[]}]},{"label":"Texas","children":[{"label":"city","children":[]}]}]},{"label":"Canada","children":[{"label":"Alberta","children":[]}]}]},{"label":"South America","children":[{"label":"city","children":[]}]},{"label":"Europe","children":[{"label":"city","children":[]}]},{"label":"Asia","children":[{"label":"city","children":[]}]},{"label":"Oceania","visible":false,"children":[{"label":"city","children":[]}]}],
+      iconRootAfter : {
+          opened: {
+              icon: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+              style: {
+                  fontSize: '12px',
+                  top: '0em',
+                  position: 'relative',
+                  marginLeft: '.8em',                           
+                  webkitTransform: 'rotate(270deg)',
+                  transform: 'rotate(270deg)',
+                  transition: 'transform 0.3s, -webkit-transform 0.3s'
+              }
+          },
+          closed: {
+              icon: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+              style: { 
+                  fontSize: '12px',
+                  top: '0em',
+                  position: 'relative',
+                  marginLeft: '.8em',
+                  webkitTransform: 'rotate(90deg)',
+                  transform: 'rotate(90deg)',
+                  transition: 'transform 0.3s, -webkit-transform 0.3s' 
+              }
+          }
+      },
+      iconDownBefore : {
+          opened: {
+              icon: '<i class="fa fa-folder-open" aria-hidden="true"></i>',
+              style: { 
+                  fontSize: '12px',  marginLeft: '0', marginRight: '.8em'  
+              }                   
+          },
+          closed: { 
+              icon:'<i class="fa fa-folder" aria-hidden="true"></i>', 
+              style: { 
+                  fontSize: '12px', marginLeft: '0', marginRight: '.8em'
+              }
+          }
+      },
+      iconDownBeforeLeaf : {
+          icon: '<i class="fa fa-map-marker" aria-hidden="true"></i>', 
+          style: { 
+              fontSize: '12px', marginLeft: '0', marginRight: '.8em' 
+          } 
+      },
+      iconDownAfter : {
+          opened: { 
+              icon:'<i class="fa fa-minus-square" aria-hidden="true"></i>',
+              style: { 
+                  fontSize: '15px', marginLeft: '.8em', marginRight: '.1em' 
+              } 
+          },
+          closed: { 
+              icon:'<i class="fa fa-plus-square" aria-hidden="true"></i>',
+              style: { fontSize: '15px', marginLeft: '.8em', marginRight: '.1em' }
+          }
+      },
+      iconRightBefore : {
+          opened: { 
+              icon: '<i class="fa fa-folder-open" aria-hidden="true"></i>', 
+              style: { 
+                  fontSize: '12px', marginLeft: '0', marginRight: '.8em' 
+              }  
+          },
+          closed: { 
+              icon: '<i class="fa fa-folder" aria-hidden="true"></i>', 
+              style: { 
+                  fontSize: '12px', marginLeft: '0', marginRight: '.8em' 
+              } 
+          },
+      },
+      iconRightBeforeLeaf : {
+          icon: '<i class="fa fa-map-marker" aria-hidden="true"></i>', 
+          style: { fontSize: '12px', marginLeft: '0', marginRight: '.8em'} 
+      },
+      iconRightAfter : {
+          opened: { 
+              icon: '<i class="fa fa-chevron-down" aria-hidden="true"></i>', 
+              style: { 
+                  fontSize: '12px', 
+                  marginLeft: '.8em',
+                  marginRight: '.3em',
+                  webkitTransform: 'rotate(90deg)',
+                  transform: 'rotate(90deg)',
+                  transition: 'transform 0.3s, -webkit-transform 0.3s'
+                } 
+          },
+          closed: { 
+              icon: '<i class="fa fa-chevron-down" aria-hidden="true"></i>', 
+              style: { 
+                  fontSize: '12px', 
+                  marginLeft: '.8em',
+                  marginRight: '.3em',
+                  webkitTransform: 'rotate(-90deg)',
+                  transform: 'rotate(-90deg)',
+                  transition: 'transform 0.3s, -webkit-transform 0.3s'
+              } 
+          },
+      },
+      itemStyle : {
+        minWidth: '15em'
+      }
+    },
+    methods: {
+      clickItem(event, item){
+        alert(JSON.stringify(item.label)); 
+      }
+    }  
+  })
+</script>
+</body>
+</html>

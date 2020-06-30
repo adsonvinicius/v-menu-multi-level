@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Live Demo: v-menu-multi-level  - by adsonvinicius</title>
+  <title>Demo: v-menu-multi-level - by adsonvinicius</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://unpkg.com/v-menu-multi-level@latest/dist/v-menu-multi-level.css'>
@@ -79,7 +79,11 @@ var app = new Vue({
     el: '#app',
     components: {'v-menu-multi-level': window['v-menu-multi-level'] },
     data: {
-      nodes: [{"label":"North America","children":[{"label":"United States","children":[{"label":"California","children":[{"label":"Los Angeles","children":[{"label":"Hollywood","children":[]},{"label":"Santa Monica","children":[]},{"label":"Beverly Hills","children":[]}]},{"label":"San Diego","children":[{"label":"city","children":[]}]},{"label":"San Francisco","children":[{"label":"city","children":[]}]}]},{"label":"Hawaii","children":[{"label":"city","children":[]}]},{"label":"New York","children":[{"label":"city","children":[]}]},{"label":"Texas","children":[{"label":"city","children":[]}]}]},{"label":"Canada","children":[{"label":"Alberta","children":[]}]}]},{"label":"South America","children":[{"label":"city","children":[]}]},{"label":"Europe","children":[{"label":"city","children":[]}]},{"label":"Asia","children":[{"label":"city","children":[]}]},{"label":"Oceania","visible":false,"children":[{"label":"city","children":[]}]}],
+      nodes: [],
+      iconRootBefore : {
+          opened: { icon: '', style: '' },
+          closed: { icon: '', style: '' }  
+      },
       iconRootAfter : {
           opened: {
               icon: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
@@ -121,7 +125,7 @@ var app = new Vue({
           }
       },
       iconDownBeforeLeaf : {
-          icon: '<i class="fa fa-map-marker" aria-hidden="true"></i>', 
+          icon: '<i class="fa fa-file-o" aria-hidden="true"></i>', 
           style: { 
               fontSize: '12px', marginLeft: '0', marginRight: '.8em' 
           } 
@@ -179,17 +183,81 @@ var app = new Vue({
                   transition: 'transform 0.3s, -webkit-transform 0.3s'
               } 
           },
+      }, 
+      rootItemStyle: {
+          backgroundColor: '#f9f9f9',
+          color: '#555',
+          textAlign: 'center',
+          fontSize: '14px',
+          padding: '.3em 2em .3em 2em',
+          fontfamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'  
       },
-      itemStyle : {
-        minWidth: '15em'
-      }
+      rootItemActiveStyle: {
+          color: '#fff',
+          background: 'rgba(75, 75, 75, 0.8)',
+          boxShadow: '0 4px 6px 0 rgba(0, 0, 0, 0.3)'
+      },
+      rootItemHoverStyle: {
+          backgroundColor: '#e7e7e7',
+      },
+      containerItemsStyleDown: {
+          border: 'solid 1px #d9d9d9',
+      },
+      containerItemsStyleRight: {
+          border: 'solid 1px #d9d9d9',
+      },
+      itemStyle:{
+          padding: '6px 10px 6px 10px',
+          backgroundColor: '#f5f5f5',
+          color: '#555',
+          fontSize: '14px',
+          minWidth: '15em',
+          fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'         
+      },
+      stripedStyle: [
+          {
+              backgroundColor: '#f5f5f5',
+              color: '#555'
+          },
+          {
+              backgroundColor: '#fff',
+              color: '#555'
+          }              
+      ],
+      itemHoverStyle: {
+          backgroundColor: '#e7e7e7',
+          color: '#555',
+      },            
+      itemActiveStyle: {
+          color: '#fff',
+          background: 'rgba(75, 75, 75, 0.8)',
+          boxShadow: '0 4px 6px 0 rgba(0, 0, 0, 0.3)'
+      } 
     },
-    methods: {
-      clickItem(event, item){
-        alert(JSON.stringify(item.label)); 
-      }
-    }  
-  })
+  methods:{
+    clickItem(event, item){
+      console.log(item.label); 
+    },
+
+    sortItems(a, b){
+      return b.label.localeCompare(a.label); 
+    },
+    generate(labels, children){
+        var n = [];
+        for(let x = 0; x < labels.length; x++)
+            n.push({'label': labels[x], children: children});
+        return n;	
+    }
+  },
+  mounted(){  
+    let labels0 = ['Level_Root_1','Level_Root_2','Level_Root_3','Level_Root_4','Level_Root_5']
+    let labels1 = ['Level_1','Level_2','Level_3','Level_4','Level_5']
+    let labels2 = ['Sub_Level_1','Sub_Level_2','Sub_Level_3','Sub_Level_4','Sub_Level_5']
+    let labels3 = ['Sub_Sub_Level_1','Sub_Sub_Level_2','Sub_Sub_Level_3','Sub_Sub_Level_4','Sub_Sub_Level_5']
+    let labels4 = ['Sub_Sub_Sub_Level_1','Sub_Sub_Sub_Level_2','Sub_Sub_Sub_Level_3','Sub_Sub_Sub_Level_4','Sub_Sub_Sub_Level_5']
+    this.nodes = this.generate(labels0, this.generate(labels1, this.generate(labels2, this.generate(labels3, this.generate(labels4, [])))));
+  }  
+})
 </script>
 </body>
 </html>

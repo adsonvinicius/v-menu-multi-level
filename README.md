@@ -164,7 +164,7 @@ export default {
 ### Events ###
 |  Event  |  Arguments  | Description |
 | ------------ | ------------ | ------------ | 
-| clickItem  | **event** -  Native event object.<br/>  **item** -  Node of the item  clicked. |  Emitted when an item is clicked. |
+| click-item  | **event** -  Native event object.<br/>  **item** -  Node of the item  clicked. |  Emitted when an item is clicked. |
 
 
 <h2 id="default-styles">Default Styles</h2>

@@ -4,7 +4,7 @@
         align="center"
         children="children"
         label="label"
-        open-direction="right"
+        open-direction="down"
         root-item-position="left"
         :item-active-style="itemActiveStyle"
         :container-items-style-down="containerItemsStyleDown" 
@@ -23,22 +23,21 @@
         :keep-opened="false"
         :nodes="nodes"
         :open-on-leaf-only ="true"
-        :offset-down-direction="15"
+        :offset-down-direction="20"
         :root-item-active-style="rootItemActiveStyle" 
         :root-item-hover-style="rootItemHoverStyle" 
         :root-item-style="rootItemStyle" 
- 
         :striped-style="stripedStyle" 
-        @clickitem="clickItem">
+        @click-item="clickItem">
 
         <template v-slot:prepend>
-              <div class="profile"><span>World Cities</span></div>
+              <div class="profile"><span>v-menu-multi-level</span></div>
         </template>
 
         <template v-slot:append>
               <div class="user-info">
-                <span>Adson Damasceno</span>
-                <span>v-menu-multi-level</span>
+                <span><i>Developed by</i></span>
+                <span><i>Adson Vinicius</i></span>
               </div>
         </template>
         
@@ -47,7 +46,6 @@
 </template>
 
 <script>
-import reports from './../drafts/reports.json'
 import VMenuMultiLevel from './components/v-menu-multi-level'
 
 export default {
@@ -57,7 +55,7 @@ export default {
   },
   data(){
     return {
-      nodes: [{"label":"North America","children":[{"label":"United States","children":[{"label":"California","children":[{"label":"Los Angeles","children":[{"label":"Hollywood","children":[]},{"label":"Santa Monica","children":[]},{"label":"Beverly Hills","children":[]}]},{"label":"San Diego","children":[{"label":"city","children":[]}]},{"label":"San Francisco","children":[{"label":"city","children":[]}]}]},{"label":"Hawaii","children":[{"label":"city","children":[]}]},{"label":"New York","children":[{"label":"city","children":[]}]},{"label":"Texas","children":[{"label":"city","children":[]}]}]},{"label":"Canada","children":[{"label":"Alberta","children":[]}]}]},{"label":"South America","children":[{"label":"city","children":[]}]},{"label":"Europe","children":[{"label":"city","children":[]}]},{"label":"Asia","children":[{"label":"city","children":[]}]},{"label":"Oceania","visible":false,"children":[{"label":"city","children":[]}]}],
+      nodes: [],
       iconRootBefore : {
           opened: { icon: '', style: '' },
           closed: { icon: '', style: '' }  
@@ -103,7 +101,7 @@ export default {
           }
       },
       iconDownBeforeLeaf : {
-          icon: '<i class="fa fa-map-marker" aria-hidden="true"></i>', 
+          icon: '<i class="fa fa-file-o" aria-hidden="true"></i>', 
           style: { 
               fontSize: '12px', marginLeft: '0', marginRight: '.8em' 
           } 
@@ -221,71 +219,20 @@ export default {
     sortItems(a, b){
       return b.label.localeCompare(a.label); 
     },
-    
-    getChildren(data, id) {
-        let node = null;
-        let _self = this;
-        data.forEach(function(k){
-            if (k.extra.id == id) {
-                node = k;
-            }
-            else if (!node && k.children && k.children.length > 0) {
-                node = _self.getChildren(k.children, id);
-            }
-        });
-        return node;
-    },
-    generateTreeNode(id, path) {
-        var node = [];
-        let _self = this;
-        reports.forEach(function(j){
-            var item_path = j.pathField.split('/');
-            if (item_path.length > 1) {
-                let parent_path = item_path.slice(0, item_path.length - 1).join('/');
-                if (parent_path.toLowerCase() == path.toLowerCase() && j.idField != id) {
-                    node.push({
-                        'label': j.nameField, 
-                        'children': _self.generateTreeNode(j.idField, j.pathField),
-                        'extra': {
-                          'path': j.pathField,
-                          'type': j.typeNameField,
-                          'id': j.idField,
-                          'description': j.descriptionField
-                        }
-                    });
-                }
-            }
-        });
-        return node;
+    generate(labels, children){
+        var n = [];
+        for(let x = 0; x < labels.length; x++)
+            n.push({'label': labels[x], children: children});
+        return n;	
     }
   },
-  mounted(){
-    let temp = [];
-    let _self = this;
-    reports.forEach(function(j){
-        if (_self.getChildren(temp, j.idField) == null) {
-          let item = {
-            'label': j.nameField,
-            'extra': {
-                'path': j.pathField,
-                'type': j.typeNameField,
-                'id': j.idField,
-                'description': j.descriptionField
-            }
-          }
-          item.children = j.typeNameField != 'Folder' ? [] : _self.generateTreeNode(j.idField, j.pathField);
-          temp.push(item);
-        }
-    });
-
-    //this.nodes.forEach(function(k){
-    //  try {
-          //let item = temp.find(item => item.label == k.label);
-          //k.children = item ? item.children : [];
-    //  } catch(ex) {
-    //      console.log(ex);
-    //  }
-    //});
+  mounted(){  
+    let labels0 = ['Level_Root_1','Level_Root_2','Level_Root_3','Level_Root_4','Level_Root_5']
+    let labels1 = ['Level_1','Level_2','Level_3','Level_4','Level_5']
+    let labels2 = ['Sub_Level_1','Sub_Level_2','Sub_Level_3','Sub_Level_4','Sub_Level_5']
+    let labels3 = ['Sub_Sub_Level_1','Sub_Sub_Level_2','Sub_Sub_Level_3','Sub_Sub_Level_4','Sub_Sub_Level_5']
+    let labels4 = ['Sub_Sub_Sub_Level_1','Sub_Sub_Sub_Level_2','Sub_Sub_Sub_Level_3','Sub_Sub_Sub_Level_4','Sub_Sub_Sub_Level_5']
+    this.nodes = this.generate(labels0, this.generate(labels1, this.generate(labels2, this.generate(labels3, this.generate(labels4, [])))));
   }
 }
 </script>

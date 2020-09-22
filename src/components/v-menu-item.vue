@@ -219,8 +219,16 @@ export default {
 
 #v-menu-multi-level .dropdown-text {
     display: flex;
+    align-items: flex-start; 
+    width: 100%;     
+}
+
+/*
+#v-menu-multi-level .dropdown-text {
+    display: flex;
     align-items: flex-start;      
 }
+*/
 
 #v-menu-multi-level .dropdown-text .item-text {
     align-self: center;
@@ -243,7 +251,7 @@ export default {
 }
 
 #v-menu-multi-level .dropdown-menu.vmml-opened{
- display: block;   
+    display: block;   
 }
 
 #v-menu-multi-level .dropdown-menu-absolute {

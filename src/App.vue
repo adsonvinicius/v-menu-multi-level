@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-menu-multi-level
-        align="center"
+        align="top"
         children="children"
         label="label"
         open-direction="down"
@@ -239,9 +239,10 @@ export default {
 
 <style>
 body{
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+/*
 
 .profile {
     color: #555!important;
@@ -259,5 +260,25 @@ body{
 .user-info span {
   display: block;
   text-align: right;
+}
+
+*/
+
+.profile {
+    color: #555!important;
+    font-weight: bold;
+    padding: 15px 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.user-info {
+  display: block;
+  padding: 10px 15px;
+}
+
+.user-info span {
+  display: block;
+  text-align: center;
 }
 </style>

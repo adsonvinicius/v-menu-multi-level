@@ -160,7 +160,7 @@ export default {
         }
     },
     created(){
-        this.p_align = ['center', 'fill', 'left', 'right'].indexOf(this.align) > -1 ? this.align : 'center'
+        this.p_align = ['center', 'fill', 'left', 'right', 'top', 'bottom'].indexOf(this.align) > -1 ? this.align : 'center'
         this.p_keepOpened = [true, 'true'].indexOf(this.keepOpened) > -1       
         this.p_sortItems = this.sortItems || this.p_sortItems
         this.p_ignoreSortRootItems = [true, 'true'].indexOf(this.ignoreSortRootItems) > -1    
@@ -188,11 +188,12 @@ export default {
             return typeof this.nodes === 'object' ? this.generateMenu() : []
         },
         alignMenu: function(){
-            if(this.p_align == 'left')
+            
+            if(['left', 'top'].indexOf(this.p_align) > -1)
                 return 'justify-content: flex-start'
             else if(this.p_align == 'fill')  
                 return 'justify-content: space-between'       
-            else if(this.p_align == 'right')
+            else if(['right', 'bottom'].indexOf(this.p_align) > -1)
                 return 'justify-content: flex-end'
             else
                 return 'justify-content: center'
@@ -203,6 +204,64 @@ export default {
 
 <style scoped>
 
+#v-menu-multi-level {
+    height: 100%;
+    min-height: 100%;
+	display: flex;
+	flex-direction: column;
+    position: fixed;
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    white-space: nowrap;
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+    background-color: #f8f9fa;   
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: #212529;  
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+
+}
+
+#v-menu-multi-level .menu-container {
+    display: flex;
+	flex-direction: column;
+    justify-content: start;
+    flex: 1;
+
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+#v-menu-multi-level .prepend {
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+}
+
+#v-menu-multi-level .append {
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+}
+
+#v-menu-multi-level ul,  #v-menu-multi-level li {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+/*
 #v-menu-multi-level {
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
@@ -262,5 +321,6 @@ export default {
     flex-basis: auto;
     flex-direction: column;
 }
+*/
 
 </style>

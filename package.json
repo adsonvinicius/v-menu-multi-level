@@ -27,9 +27,9 @@
   "devDependencies": {
     "vue": "^2.6.11",
     "lodash.merge": "^4.6.2",
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
     "babel-eslint": "^10.1.0",
     "core-js": "^3.6.5",
     "eslint": "^6.7.2",
